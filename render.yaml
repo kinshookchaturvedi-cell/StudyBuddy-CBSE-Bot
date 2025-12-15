@@ -1,0 +1,31 @@
+# Render Deployment Configuration for StudyBuddy CBSE Bot
+# This file automates deployment on Render.com
+
+services:
+  - type: web
+    name: studybuddy-cbse-bot
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    
+    # Environment Variables
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: WHATSAPP_API_TOKEN
+        sync: false
+      - key: WHATSAPP_BUSINESS_ACCOUNT_ID
+        sync: false
+      - key: VERIFY_TOKEN
+        sync: false
+      - key: MONGODB_URI
+        sync: false
+      - key: DIALOGFLOW_PROJECT_ID
+        sync: false
+    
+    # Health Check
+    healthCheckPath: /webhook
+    
+    # Auto-deploy on git push
+    autoDeploy: true
