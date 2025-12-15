@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Build
+build/
+dist/
+.cache/
+
+# Logs
+logs/
+*.log
+
+# Keys
+keys/*.json
+!keys/.gitkeep
+
+# Database
+*.db
+.mongodb/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+.nyc_output/
+coverage/
